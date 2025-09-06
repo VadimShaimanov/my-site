@@ -6,11 +6,9 @@ import "normalize.css";
 import "./styles/fonts.css";
 import "./styles/base.css";
 
-
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/my-site/">
       <App />
     </BrowserRouter>
   </React.StrictMode>
