@@ -1,0 +1,129 @@
+/* ===== КОЛЛЕКЦИЯ ВКУСА ===== */
+.collection {
+  position: relative;
+  padding: 80px 0;
+  background: linear-gradient(180deg, #0b1521 0%, #101d2e 100%);
+}
+
+/* фон-картинка */
+.collection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/bg-img/bg-2.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.collectionTitle {
+  font-family: "Cormorant-Garamond";
+  font-size: 64px;
+  line-height: 70px;
+  margin-bottom: 50px;
+  color: var(--color-title);
+  position: relative;
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(277px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  aspect-ratio: 4/5;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-size 0.6s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+  background-size: 110%; /* Легкое увеличение фона */
+}
+
+.cardOverlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+  opacity: 0.7;
+  transition: opacity 0.4s ease, background 0.4s ease;
+  -webkit-transition: opacity 0.4s ease, background 0.4s ease;
+  -moz-transition: opacity 0.4s ease, background 0.4s ease;
+  -ms-transition: opacity 0.4s ease, background 0.4s ease;
+  -o-transition: opacity 0.4s ease, background 0.4s ease;
+}
+
+.card:hover .cardOverlay {
+  opacity: 0.9;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .cardOverlay {
+  opacity: 0.9;
+}
+
+.cardContent {
+  padding: 32px 32px 0 32px;
+  color: white;
+}
+
+.cardContent h3 {
+  font-family: "CormorantGaramond-Med-Italic";
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: 0;
+  font-size: 48px;
+  line-height: 24px;
+  color: var(--color-link);
+  margin-bottom: 11px;
+}
+
+.cardContent p {
+  font-size: 24px;
+  color: var(--color-sub-title);
+  line-height: 26px;
+  letter-spacing: -0.03em;
+  font-family: "Cormorant-Garamond";
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+
+  .cardContent {
+    padding: 16px 12px;
+  }
+
+  .cardContent h3 {
+    font-size: 18px;
+  }
+
+  .cardContent p {
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+
+
